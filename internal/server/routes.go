@@ -23,6 +23,7 @@ func (s *Server) HelloWorldHandler(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf("error handling JSON marshal. Err: %v", err)
 	}
 
+  w.Header().Set("Content-Type", "application/json")
 	_, _ = w.Write(jsonResp)
 }
 
